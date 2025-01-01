@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: serverless-full-stack-apps-azure-sql
+metadata:
+    template: azd-init@1.11.0
+services:
+    node:
+        project: azure-static-web-app/api/node
+        host: containerapp
+        language: js
+    python:
+        project: azure-static-web-app/api/python
+        host: containerapp
+        language: python

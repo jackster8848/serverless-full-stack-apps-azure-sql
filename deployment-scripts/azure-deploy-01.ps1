@@ -1,11 +1,13 @@
 # 1. Deploy database 
-$adminSqlLogin = "cloudadmin"
-$password = Read-Host "Your username is 'cloudadmin'. Please enter a password for your Azure SQL Database server that meets the password requirements"
+$adminSqlLogin = "jackster"
+# Your username is 'cloudadmin'. Please enter a password for your Azure SQL Database server that meets the password requirements
+$password = "JasperR0ck5"
 # Prompt for local ip address
-$ipAddress = Read-Host "Disconnect your VPN, open PowerShell on your machine and run '(Invoke-WebRequest -Uri "https://ipinfo.io/ip").Content'. Please enter the value (include periods) next to 'Address': "
+# Disconnect your VPN, open PowerShell on your machine and run '(Invoke-WebRequest -Uri "https://ipinfo.io/ip").Content'. Please enter the value (include periods) next to 'Address'
+$ipAddress = 220.233.92.187
 # Get resource group and location and random string
-$resourceGroupName = "Sandbox resource group name"
-$resourceGroup = Get-AzResourceGroup | Where ResourceGroupName -like $resourceGroupName
+$resourceGroupName = "FreeTrailResourceGroup1"
+$resourceGroup = Get-AzResourceGroup | Where-Object ResourceGroupName -like $resourceGroupName
 $uniqueID = Get-Random -Minimum 100000 -Maximum 1000000
 $location = $resourceGroup.Location
 # The logical server name has to be unique in the system
